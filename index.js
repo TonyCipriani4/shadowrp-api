@@ -18,7 +18,7 @@ app.get("/", (req, res) => {
 app.get("/api/localize/*", (req, res) => {
     res.sendFile(path.join(publicPath, `./api/localize/${req.params[0]}.json`));
 });
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.listen(port, '0.0.0.0', () => {
   console.log(`X-Ray Is Starting 90 ${port}`);
 });
